@@ -142,7 +142,7 @@ function apply_github_pr() {
         echo "Usage: apply_github_pr PR_URL"
         return 1
     fi
-    
+
     local pr_url="$1"
     local pr_diff_url="${pr_url}.diff"
     local patch_file patch_status
@@ -151,7 +151,7 @@ function apply_github_pr() {
         echo "Failed to create a temporary file" >&2
         return 1
     }
-    
+
     # Download the complete diff before modifying the working tree.
     if ! curl --fail --location --silent --show-error \
         --output "$patch_file" "$pr_diff_url"; then
