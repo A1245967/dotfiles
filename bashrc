@@ -129,7 +129,7 @@ get_repo_branches() {
   printf '%s' "${output% }"
 }
 
-export PS1="\[\e[0;35m\][\t] \[\e[1;31m\]\$(get_directory_warning)\[\033[33m\][git branch: \$(parse_git_branch)] [repos: \$(get_repo_branches)] \#/\!\n\[\e[32;1m\][\u@\h \W] \[\033[33m\]\[\033[01;31m\]$ \[\033[00m\]"
+export PS1="\[\e[0;35m\][\t] \[\e[1;31m\]\$(get_directory_warning)\[\033[33m\][git branch: \$(parse_git_branch)] [repos: \$(get_repo_branches)] \n\[\e[32;1m\][\u@\h \W] \[\033[33m\]\[\033[01;31m\]$ \[\033[00m\]"
 
 # apply clang-format to all source files in the current directory and subdirectories
 # clang-formatter -i --style=file $FILES
