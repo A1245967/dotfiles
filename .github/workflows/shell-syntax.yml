@@ -1,0 +1,19 @@
+name: Shell syntax
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Check Bash syntax
+        run: bash -n bashrc
+      - name: Check POSIX shell syntax
+        run: sh -n install.sh
